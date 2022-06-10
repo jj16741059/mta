@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Part One</h2>
+<p>Create a function that accepts an array, and returns the array in reverse without using array.reverse.</p>
+
+<p id="1-1"></p>
+
+<p>Create a function that determines if a string is a palindrome. A palindrome is a word or phrase that is spelled the same forwards and reversed.</p>
+
+<p id="2-1"></p>
+<p id="2-2"></p>
+<p id="2-3"></p>
+<script>
+
+function reversethis() {
+ const reversesource = [];
+ for(let i = source.length-1; i >= 0; i--) {
+  reversesource.push(source[i]);
+ }
+ return reversesource;
+}
+function palindrome(str) {
+ var re = /[^A-Za-z0-9]/g;
+ str = str.toLowerCase().replace(re, '');
+ var len = str.length;
+ for (var i = 0; i < len/2; i++) {
+   if (str[i] !== str[len - 1 - i]) {
+       return false;
+   }
+ }
+ return true;
+}
+const source = ['Dog', 'Cat', 'Bear', 'Whale'];
+document.getElementById("1-1").innerHTML = reversethis(source);
+
+document.getElementById("2-1").innerHTML = palindrome("Radar");
+document.getElementById("2-2").innerHTML = palindrome("Radars");
+document.getElementById("2-3").innerHTML = palindrome("Never odd or even");
+</script>
+
+</body>
+</html>
